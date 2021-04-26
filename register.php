@@ -11,7 +11,7 @@
     <title>Home!</title>
   </head>
   <body>
-      <?php include 'registration.php'; ?>
+	<?php include 'registration.php'; ?>
   <?php include 'navbar.php'; ?>
     <div class="container">
         <form action="register.php" method="POST">
