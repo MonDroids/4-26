@@ -1,4 +1,9 @@
 <?php
+
+
+
+
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,18 +21,29 @@ if ($conn->connect_error) {
 // }
 $sql = "SELECT * FROM `users`";
 
-$result = $conn->query($sql);
+for($x=0; $x<100; $x++) {
+  $sql = "INSERT INTO 'users' 
+    ('email', 'password', 'name', 'username')
+VALUES 
+    ('i+$x@apprentice.mn', 'asdfasdf+$x', 'Apprentice MGL+$x', 'apprenticemn+$x');";
+  die($sql);   
+  $hariu = $conn->query($sql);
+}
 
-if ($result->num_rows > 0) {
-  while($egnee = $result->fetch_assoc()) {
+if ($hariu->num_rows > 0) {
+  while($egnee = $hariu->fetch_assoc()) {
     print_r($egnee);
+    echo "<hr>";
   }
 } else {
   echo "0 results";
 }
+
 $conn->close();
 
+// if(1 === '1') {
 
+// }
 
 function calculate($too1, $too2, $uildel = '+') {
     $too1;
