@@ -26,18 +26,19 @@ for($x=0; $x<100; $x++) {
     ('email', 'password', 'name', 'username')
 VALUES 
     ('i+$x@apprentice.mn', 'asdfasdf+$x', 'Apprentice MGL+$x', 'apprenticemn+$x');";
-  die($sql);   
+  print_r($sql);   
+  // die($sql);   
   $hariu = $conn->query($sql);
 }
 
-if ($hariu->num_rows > 0) {
-  while($egnee = $hariu->fetch_assoc()) {
-    print_r($egnee);
-    echo "<hr>";
-  }
-} else {
-  echo "0 results";
-}
+// if ($hariu->num_rows > 0) {
+//   while($egnee = $hariu->fetch_assoc()) {
+//     print_r($egnee);
+//     echo "<hr>";
+//   }
+// } else {
+//   echo "0 results";
+// }
 
 $conn->close();
 
