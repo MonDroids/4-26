@@ -1,7 +1,14 @@
 <?php
 
+// $string = "asfdaskjasjklsd,asfasdfasfasfd,asfdasfasf,asdfasfdasf,asfasfd";
+
+// $buttarsan = explode(",", $string);
+
+// print_r($buttarsan);
 
 
+// echo implode(",", $buttarsan);
+// die();
 
 
 $servername = "localhost";
