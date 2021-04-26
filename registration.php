@@ -16,19 +16,24 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
 // public function query($sql){
     // return $result;
 // }
+
 $sql = "SELECT * FROM `users`";
 
 for($x=0; $x<100; $x++) {
-  $sql = "INSERT INTO 'users' 
-    ('email', 'password', 'name', 'username')
-VALUES 
-    ('i+$x@apprentice.mn', 'asdfasdf+$x', 'Apprentice MGL+$x', 'apprenticemn+$x');";
-  print_r($sql);   
-  // die($sql);   
-  $hariu = $conn->query($sql);
+  $sql = "INSERT INTO users (email, password, name, username) VALUES ('i+1$x@apprentice.mn', 'asdfasdf+1$x', 'Apprentice MGL+1$x', 'apprenticemn+1$x');";
+  echo $x;
+
+  // $hariu = $conn->query($sql);
+  if ($conn->query($sql) === TRUE) {
+    echo "+" . "<br>";
+  } else {
+    echo "Error: " . $sql . "<hr>" . $conn->error;
+    die();
+  }
 }
 
 // if ($hariu->num_rows > 0) {
